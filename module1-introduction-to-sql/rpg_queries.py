@@ -145,8 +145,8 @@ print("Average number of items (Option 1):", avg_char_items[0][0])
 
 # Option 2
 avg_num_items_per_character2 = """
-    SELECT cast(COUNT(charactercreator_character_inventory.item_id) as float)/
-    COUNT(DISTINCT character_id)
+    SELECT ROUND(cast(COUNT(charactercreator_character_inventory.item_id) as float)/
+    COUNT(DISTINCT character_id), 2)
     FROM charactercreator_character_inventory
     INNER JOIN armory_item
     ON armory_item.item_id = charactercreator_character_inventory.item_id;
@@ -176,8 +176,8 @@ print("Average number of weapons (Option 1):", avg_char_weapons[0][0])
 
 # Option 2
 avg_num_weapons_per_character2 = """
-    SELECT cast(COUNT(charactercreator_character_inventory.item_id) as float)/
-    COUNT(DISTINCT character_id)
+    SELECT ROUND(cast(COUNT(charactercreator_character_inventory.item_id) as float)/
+    COUNT(DISTINCT character_id), 2)
     FROM charactercreator_character_inventory
     INNER JOIN armory_weapon
     ON armory_weapon.item_ptr_id = charactercreator_character_inventory.item_id;

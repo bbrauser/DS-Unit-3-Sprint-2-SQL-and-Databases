@@ -6,8 +6,8 @@ conn = sqlite3.connect('buddymove_holidayiq.sqlite3')
 curs = conn.cursor()
 
 
-# curs.execute('CREATE TABLE review (User_Id, Sports, Religious, Nature, Theatre, Shopping, Picnic)')
-# conn.commit()
+curs.execute('DROP TABLE IF EXISTS review; CREATE TABLE review (User_Id, Sports, Religious, Nature, Theatre, Shopping, Picnic)')
+conn.commit()
 
 
 df = pd.read_csv('/Users/bradbrauser/unit3/DS-Unit-3-Sprint-2-SQL-and-Databases/module1-introduction-to-sql/buddymove_holidayiq.csv')
