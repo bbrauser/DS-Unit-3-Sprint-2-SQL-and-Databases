@@ -33,7 +33,7 @@ sl_curs.fetchall()
 
 # Creating character table
 create_titanic_passengers_table = """
-CREATE TABLE titanic_passengers (
+CREATE TABLE titanic_passengers_3 (
     Survived INT, 
     Pclass INT, 
     Name TEXT, 
@@ -55,23 +55,23 @@ def refresh_connection_and_cursor(conn, curs):
 pg_conn, pg_curs = refresh_connection_and_cursor(pg_conn, pg_curs)
 
 
-# Commiting table to instance
-pg_curs.execute(create_titanic_passengers_table)
-pg_conn.commit()
+# # Commiting table to instance
+# pg_curs.execute(create_titanic_passengers_table)
+# pg_conn.commit()
 
 
 # Inserting characters into empty table
 for passenger in passengers:
   insert_passenger = """
-    INSERT INTO titanic_passengers
-    (Survived, Pclass, Name, Sex, Age, Siblings/Spouses_Aboard, Parents/Children_Aboard, Fare)
+    INSERT INTO titanic_passengers_3
+    (Survived, Pclass, Name, Sex, Age, Siblings_Spouses_Aboard, Parents_Children_Aboard, Fare)
     VALUES """ + str(passenger[1:]) + ";"
   pg_curs.execute(insert_passenger)
 
 
 # Commiting to database
 pg_conn.commit()
-pg_curs.execute('SELECT * FROM titanic_passengers;')
+pg_curs.execute('SELECT * FROM titanic_passengetitanic_passengers_3rs_2;')
 pg_passengers = pg_curs.fetchall()
 for passenger, pg_passenger in zip(passengers, pg_passengers):
   assert passenger == pg_passenger
