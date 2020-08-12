@@ -8,6 +8,7 @@ user = 'kbgqljxh'  # ElephantSQL happens to use same name for db and user
 password = 'QHI-WkUVtOcs-pFDVaPgU60nqANxVObL'  # Sensitive! Don't share/commit
 host = 'isilo.db.elephantsql.com'
 
+
 # Connecting
 pg_conn = psycopg2.connect(dbname=dbname, user=user, password=password, host=host)
 pg_curs = pg_conn.cursor()
@@ -83,6 +84,7 @@ def refresh_connection_and_cursor(conn, curs):
     pg_curs = pg_conn.cursor()
     return pg_conn, pg_curs
 pg_conn, pg_curs = refresh_connection_and_cursor(pg_conn, pg_curs)
+
 
 # Commiting table to instance
 pg_curs.execute(create_character_table)
