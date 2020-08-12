@@ -99,7 +99,7 @@ character_items_20 = """
     armory_item AS ai, charactercreator_character_inventory AS cci
     WHERE cc.character_id = cci.character_id
     AND ai.item_id = cci.item_id)
-    GROUP BY 1 ORDER BY 3 DESC
+    GROUP BY 1 ORDER BY 2 DESC
     LIMIT 20;
 """
 tot_char_items = execute_query(curs, character_items_20)
@@ -145,7 +145,7 @@ print("Average number of items (Option 1):", avg_char_items[0][0])
 
 # Option 2
 avg_num_items_per_character2 = """
-    SELECT ROUND(cast(COUNT(charactercreator_character_inventory.item_id) as float)/
+    SELECT ROUND(cast(COUNT(charactercreator_character_inventory.item_id) AS float)/
     COUNT(DISTINCT character_id), 2)
     FROM charactercreator_character_inventory
     INNER JOIN armory_item

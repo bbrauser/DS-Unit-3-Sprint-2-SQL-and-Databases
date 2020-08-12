@@ -55,9 +55,9 @@ def refresh_connection_and_cursor(conn, curs):
 pg_conn, pg_curs = refresh_connection_and_cursor(pg_conn, pg_curs)
 
 
-# # Commiting table to instance
-# pg_curs.execute(create_titanic_passengers_table)
-# pg_conn.commit()
+# Commiting table to instance
+pg_curs.execute(create_titanic_passengers_table)
+pg_conn.commit()
 
 
 # Inserting characters into empty table
