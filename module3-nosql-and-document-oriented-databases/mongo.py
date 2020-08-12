@@ -37,7 +37,7 @@ for c in results:
 
 
 # Connection to MongoDB
-client = pymongo.MongoClient("mongodb+srv://bbrauser:L7ZuCWSE0micg6Jp@cluster0.qqq6g.gcp.mongodb.net/RPG_Characters?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://bbrauser:L7ZuCW**********@cluster0.qqq6g.gcp.mongodb.net/RPG_Characters?retryWrites=true&w=majority")
 db = client.RPG_Characters
 
 
