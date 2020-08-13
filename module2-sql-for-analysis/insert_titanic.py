@@ -71,7 +71,7 @@ for passenger in passengers:
 
 # Commiting to database
 pg_conn.commit()
-pg_curs.execute('SELECT * FROM titanic_passengetitanic_passengers_3rs_2;')
+pg_curs.execute('SELECT * FROM titanic_passenrs_2;')
 pg_passengers = pg_curs.fetchall()
 for passenger, pg_passenger in zip(passengers, pg_passengers):
   assert passenger == pg_passenger
