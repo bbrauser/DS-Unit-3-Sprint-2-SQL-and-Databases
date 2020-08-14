@@ -20,7 +20,7 @@ df['Name'] = df['Name'].str.replace("'", "")
 # creds for cloud DB, password is TOP SECRET
 dbname = 'cwsewxgg'
 user = 'cwsewxgg'  # ElephantSQL happens to use same name for db and user
-password = 'mrmUpCk3SyyGEG4kW_HczxWF-4JOL-O5'  # Sensitive! Don't share/commit
+password = ' '  # Sensitive! Don't share/commit
 host = 'drona.db.elephantsql.com'
 
 
